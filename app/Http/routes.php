@@ -54,6 +54,22 @@ Route::group(['middleware' => 'auth'], function () {
             'as' => 'historyCourse',
             'uses' => 'UserController@historyCourse',
         ]);
+        Route::get('user/{id}/course', [
+            'as' => 'course',
+            'uses' => 'UserController@viewCourse',    
+        ]);
+        Route::get('user/{id}/course/{course}', [
+            'as' => 'course.instructions',
+            'uses' => 'UserController@viewCourseInstructions',
+        ]);
+        Route::get('user/{id}/course/{course}/subject/{subject}', [
+            'as' => 'subject.instructions',
+            'uses' => 'UserController@viewSubjectInstructions',
+        ]);
+        Route::get('user/course/{course}/members', [
+            'as' => 'course.members',
+            'uses' => 'UserController@viewMembers',
+        ]);
     });
 
 });

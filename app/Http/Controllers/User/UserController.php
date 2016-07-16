@@ -12,6 +12,8 @@ use App\Http\Requests\StoreReportRequest;
 use App\Http\Requests\EditProfileRequest;
 use App\Models\UserCourse;
 use App\Models\UserSubject;
+use App\Models\Course;
+use App\Models\Subject;
 
 class UserController extends Controller
 {
@@ -160,5 +162,47 @@ class UserController extends Controller
         $user = User::with('userSubjects', 'userSubjects.subject', 'userCourses', 'userCourses.course')->find($id);
 
         return view('user.historyCourse', compact('user'));
+    }
+
+    /**
+     * View Course of User
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function viewCourse($id)
+    {
+        $user = User::with('courses')->find($id);
+
+        return view('user.viewCourse', compact('user', 'id'));
+    }
+
+    /**
+     * View Course Details of User
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+
+    public function viewCourseInstructions($id, $course_id)
+    {
+        $userCourse = UserCourse::where('user_id', $id)->where('course_id', $course_id)->get();
+        $course = Course::with('subjects.userSubject')->find($course_id);
+
+        return view('user.viewCourseInstructions', compact('course', 'id', 'course_id', 'userCourse'));
+    }
+
+    public function viewSubjectInstructions($id, $course_id, $subject_id)
+    {
+        $userSubject = UserSubject::where('user_id', $id)->where('subject_id', $subject_id)->get();
+        $subject = Subject::with('tasks.userTask')->find($subject_id);
+
+        return view('user.viewSubjectInstructions', compact('id', 'course_id', 'subject_id', 'userSubject', 'subject'));
+    }
+
+    public function viewMembers($course_id)
+    {
+        $course = Course:: with('users')->find($course_id);
+
+        return view('user.viewMember', compact('course_id', 'course'));
     }
 }

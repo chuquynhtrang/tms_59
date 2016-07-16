@@ -10,7 +10,7 @@ class Course extends Model
     
     public function users()
     {
-        return $this->belongsToMany(User::class, 'user_courses');
+        return $this->belongsToMany(User::class, 'user_courses')->withPivot('started_date', 'ended_date', 'status', 'created_at', 'updated_at');
     }
 
     public function subjects()
@@ -21,5 +21,10 @@ class Course extends Model
     public function userCourse()
     {
         return $this->hasOne(UserCourse::class, 'course_id', 'id');
+    }
+
+    public function courseSubject()
+    {
+        return $this->hasMany(CourseSubject::class, 'course_id', 'id');
     }
 }

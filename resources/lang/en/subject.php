@@ -34,4 +34,7 @@ return [
     'status' => 'Status',
     'started_date' => 'Start Date',
     'ended_date' => 'End Date',
+    'tasks' => 'Tasks In Subject',
+    'info' => 'Basic Information',
+    'instructions' => 'Instructions',
 ];

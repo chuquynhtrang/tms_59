@@ -10,7 +10,7 @@ class Subject extends Model
     
     public function tasks()
     {
-        return $this->hasMany(Task::class);
+        return $this->hasMany(Task::class, 'subject_id', 'id');
     }
 
     public function courses()
@@ -26,5 +26,10 @@ class Subject extends Model
     public function userSubject()
     {
         return $this->hasOne(UserSubject::class, 'subject_id', 'id');
+    }
+
+    public function courseSubject()
+    {
+        return $this->hasMany(CourseSubject::class, 'subject_id', 'id');
     }
 }

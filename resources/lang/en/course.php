@@ -26,7 +26,7 @@ return [
     'save_changes' => 'Save Changes',
     'title_edit' => 'Edit Course Form',
     'delete' => 'Delete',
-    'view_subjects' => 'View Subjects In Course',
+    'view_subjects' => 'View Subjects of Course',
     'view_trainees' => 'View Trainees In Course',
     'not_found' => 'Course is not found',
     'start' => 'Start',
@@ -35,4 +35,9 @@ return [
     'status' => 'Status',
     'started_date' => 'Start Date',
     'ended_date' => 'End Date',
+    'finish' => 'Finish',
+    'instructions' => 'Instructions',
+    'subjects_of_course' => 'Subjects of Course',
+    'info' => 'Basic Infomation',
+    'members' => 'Members', 
 ];

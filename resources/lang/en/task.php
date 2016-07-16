@@ -30,4 +30,7 @@ return [
     'view_tasks' => 'View Tasks',
     'save' => 'Save',
     'remove' => 'Remove Task',
+    'start' => 'Start',
+    'working' => 'Working',
+    'finish' => 'Finish',
 ];

@@ -32,7 +32,7 @@ class User extends Authenticatable
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'user_courses')->withPivot('status', 'started_date', 'ended_date');
+        return $this->belongsToMany(Course::class, 'user_courses')->withPivot('started_date', 'ended_date', 'status', 'created_at', 'updated_at');
     }
 
     public function subjects()
@@ -53,6 +53,11 @@ class User extends Authenticatable
     public function userCourses()
     {
         return $this->hasMany(UserCourse::class, 'user_id', 'id');
+    }
+
+    public function userTasks()
+    {
+        return $this->hasMany(UserTask::class, 'user_id', 'id');
     }
 
     /**
@@ -88,7 +93,8 @@ class User extends Authenticatable
         return $results;
     }
 
-    public function avatar(){
+    public function avatar()
+    {
         return config('user.path_to_avatar') . $this->avatar;
     }
 }

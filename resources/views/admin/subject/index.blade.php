@@ -12,9 +12,7 @@
                     <h3> {{ trans('subject.subjects') }} <small>&raquo; {{ trans('subject.listing') }} </small></h3>
                 </div>
                 <div class="col-md-6 text-right">
-                    {!! Form::open(['method' => 'GET', 'route'=> ['admin.subject.create']]) !!}
-                        {!! Form::submit(trans('subject.new_subject'), ['class' =>'btn btn-success']) !!}
-                    {!! Form::close() !!}
+                    <a href="{{ route('admin.subject.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> {{ trans('subject.new_subject') }} </a>
                 </div>
             </div>
             <div class="row">
@@ -39,9 +37,9 @@
                                             <th> {{ trans('subject.description') }} </th>
                                             <th> {{ trans('subject.created_at') }} </th>
                                             <th> {{ trans('subject.updated_at') }} </th>
-                                            <th>&nbsp;</th>
-                                            <th>&nbsp;</th>
-                                            <th>&nbsp;</th>
+                                            <th> {{ trans('subject.view_details') }} </th>
+                                            <th> {{ trans('subject.view_tasks') }} </th>
+                                            <th> {{ trans('subject.edit') }} </th>
                                             <th>&nbsp;</th>
                                         </tr>
                                     </thead>
@@ -55,19 +53,13 @@
                                                 <td>{{ $subject->created_at }}</td>
                                                 <td>{{ $subject->updated_at }}</td>
                                                 <td>
-                                                    {!! Form::open(['method' => 'GET', 'route' => ['admin.subject.show', $subject->id]]) !!}
-                                                        {!! Form::submit(trans('subject.view_details'), ['class' => 'btn btn-success btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <a href="{{ route('admin.subject.show', $subject->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                                                 </td>
                                                  <td>
-                                                    {!! Form::open(['method' => 'GET', 'route' => ['admin.subject.{id}.tasks.index', $subject->id]]) !!}
-                                                        {!! Form::submit(trans('subject.view_tasks'), ['class' => 'btn btn-success btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <a href="{{ route('admin.subject.{id}.tasks.index', $subject->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                                                 </td>
                                                 <td>
-                                                    {!! Form::open(['method' => 'GET', 'route' => ['admin.subject.edit', $subject->id]]) !!}
-                                                        {!! Form::submit(trans('subject.edit'), ['class' => 'btn btn-primary btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <a href="{{ route('admin.subject.edit', $subject->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                                 </td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['admin.subject.destroy', $subject->id]]) !!}

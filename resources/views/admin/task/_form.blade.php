@@ -25,7 +25,7 @@
                             <tr>
                                  <td><input type="checkbox" name="checkbox[]" value="{{$task->id}}"></td>
                                 <td>{{ $task->name }}</td>
-                                <td>{{ $task->description }}</td>
+                                <td class="limit">{{ $task->description }}</td>
                                 <td>
                                     {!! Form::open(['method' => 'GET', 'route'=> ['admin.subject.{id}.tasks.edit', $id, $task->id]]) !!}
                                         {!! Form::submit(trans('task.edit'), ['class' => 'btn btn-primary btn-sm']) !!}

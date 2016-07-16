@@ -35,7 +35,7 @@
                                             <th> {{ trans('trainee.trainee_email') }} </th>
                                             <th> {{ trans('trainee.trainee_information') }} </th>
                                             <th> {{ trans('trainee.trainee_create') }} </th>
-                                            <th>&nbsp;</th>
+                                            <th> {{ trans('trainee.trainee_edit') }} </th>
                                             <th>&nbsp;</th>
                                         </tr>
                                     </thead>
@@ -46,10 +46,10 @@
                                                 <td> {{ $user->id }} </td>
                                                 <td> {{ $user->name }} </td>
                                                 <td> {{ $user->email }} </td>
-                                                <td> {{ $user->information }} </td>
+                                                <td class="limit"> {{ $user->information }} </td>
                                                 <td> {{ $user->updated_at }} </td>
                                                 <td>
-                                                    <a href="{{ route('admin.trainee.edit', $user->id) }}" class="btn btn-primary btn-sm">{{ trans('trainee.trainee_edit') }}</a>
+                                                    <a href="{{ route('admin.trainee.edit', $user->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                                 </td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['admin.trainee.destroy', $user->id]]) !!}

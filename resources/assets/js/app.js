@@ -51,4 +51,11 @@ $(document).ready(function() {
             $('.table.course-status tr').css('display', 'none').fadeIn('slow');
         }
     });
+
+    $('.viewTask').on('click', function () {
+        var name = $(this).data('name');
+        var description = $(this).data('description');
+        $('#taskname').text(name);
+        $('#description').text(description);
+    });
 });

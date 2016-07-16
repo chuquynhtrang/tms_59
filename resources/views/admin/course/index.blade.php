@@ -12,9 +12,7 @@
                     <h3> {{ trans('course.courses') }} <small>&raquo; {{ trans('course.listing') }} </small></h3>
                 </div>
                 <div class="col-md-6 text-right">
-                    {!! Form::open(['method' => 'GET', 'route'=> ['admin.course.create']]) !!}
-                        {!! Form::submit(trans('course.new_course'), ['class' =>'btn btn-success']) !!}
-                    {!! Form::close() !!}
+                    <a href="{{ route('admin.course.create') }}" class="btn btn-success"><i class="fa fa-plus-circle"></i> {{ trans('course.new_course') }} </a>
                 </div>
             </div>
             <div class="row">
@@ -39,8 +37,8 @@
                                             <th> {{ trans('course.description') }} </th>
                                             <th> {{ trans('course.created_at') }} </th>
                                             <th> {{ trans('course.updated_at') }}</th>
-                                            <th>&nbsp;</th>
-                                            <th>&nbsp;</th>
+                                            <th> {{ trans('course.view_details') }} </th>
+                                            <th> {{ trans('course.edit') }} </th>
                                             <th>&nbsp;</th>
                                         </tr>
                                     </thead>
@@ -54,14 +52,10 @@
                                                 <td>{{ $course->created_at }}</td>
                                                 <td>{{ $course->updated_at }}</td>
                                                 <td>
-                                                    {!! Form::open(['method' => 'GET', 'route' => ['admin.course.show', $course->id]]) !!}
-                                                        {!! Form::submit(trans('course.view_details'), ['class' => 'btn btn-success btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <a href="{{ route('admin.course.show', $course->id) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i></a>
                                                 </td>
                                                 <td>
-                                                    {!! Form::open(['method' => 'GET', 'route' => ['admin.course.edit', $course->id]]) !!}
-                                                        {!! Form::submit(trans('course.edit'), ['class' =>'btn btn-primary btn-sm']) !!}
-                                                    {!! Form::close() !!}
+                                                    <a href="{{ route('admin.course.edit', $course->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i></a>
                                                 </td>
                                                 <td>
                                                     {!! Form::open(['method' => 'DELETE', 'route' => ['admin.course.destroy', $course->id]]) !!}

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Course;
 use App\Http\Requests\CourseRequest;
+use App\Models\Subject;
 
 class CourseController extends Controller
 {

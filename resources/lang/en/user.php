@@ -51,4 +51,6 @@ return [
     'subject' => 'List Subject',
     'profile' => 'Profile',
     'all' => 'all',
+    'listing' => 'Listing member of course',
+    'id' => 'ID',
 ];
