@@ -8,6 +8,10 @@
                 <div class="panel-heading">Dashboard</div>
 
                 <div class="panel-body">
+
+                    @include('layouts.partials.error')
+                    @include('layouts.partials.success')
+
                     You are logged in!
                 </div>
             </div>

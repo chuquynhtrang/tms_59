@@ -50,6 +50,10 @@ Route::group(['middleware' => 'auth'], function () {
             'as' => 'storeReport',
             'uses' => 'UserController@storeReport',
         ]);
+        Route::get('user/{id}/historyCourse', [
+            'as' => 'historyCourse',
+            'uses' => 'UserController@historyCourse',
+        ]);
     });
 
 });

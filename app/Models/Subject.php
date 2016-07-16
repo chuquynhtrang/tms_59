@@ -22,4 +22,9 @@ class Subject extends Model
     {
         return $this->belongsToMany(User::class, 'user_subjects');
     }
+
+    public function userSubject()
+    {
+        return $this->hasOne(UserSubject::class, 'subject_id', 'id');
+    }
 }

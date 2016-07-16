@@ -57,7 +57,7 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{{ trans('auth.logout') }}</a></li>
-                                <li><a href="{{ route('user.edit', [ Auth::user()->id]) }}"><i class="fa fa-btn fa-user"></i>{{ trans('auth.profile') }}</a></li>
+                                <li><a href="{{ route('historyCourse', [ Auth::user()->id]) }}"><i class="fa fa-btn fa-user"></i>{{ trans('auth.profile') }}</a></li>
                             </ul>
                         </li>
                     @endif

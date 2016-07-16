@@ -45,4 +45,10 @@ return [
     'problem' => 'Problem',
     'next_plan' => 'Next Plan',
     'achivement' => 'Achivement',
+    'history_Course' => 'Manager Course',
+    'manager_history' => 'List Course and Subject of User',
+    'course' => ' List Course',
+    'subject' => 'List Subject',
+    'profile' => 'Profile',
+    'all' => 'all',
 ];

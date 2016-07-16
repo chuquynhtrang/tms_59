@@ -28,4 +28,10 @@ return [
     'delete' => 'Delete',
     'not_found' => 'Subject is not found',
     'view_tasks' => 'View Tasks',
+    'start' => 'Start',
+    'working' => 'Working',
+    'finish' => 'Finish',
+    'status' => 'Status',
+    'started_date' => 'Start Date',
+    'ended_date' => 'End Date',
 ];

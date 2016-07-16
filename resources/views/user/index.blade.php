@@ -20,11 +20,8 @@
                         </div>
                         <div class="panel-body">
 
-                            @include('layouts.partials.error')
-                            @include('layouts.partials.success')
-
                             <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables">
                                     <thead>
                                     <tr>
                                         <th>{{ trans('user.user_name') }}</th>
@@ -55,9 +52,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-8">
-                {!! $users->render() !!}
             </div>
         </section>
     </div>

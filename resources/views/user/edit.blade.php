@@ -29,8 +29,8 @@
                         {!! Form::label('name', trans('user.name'), ['class' => 'control-label']) !!}
                         {!! Form::text('name', $user['name'], ['class' => 'form-control', 'autofocus']) !!}
 
-                        {!! Form::label('description', trans('user.information'), ['class' => 'control-label']) !!}
-                        {!! Form::textarea('description', $user['information'], ['class' => 'form-control', 'rows' => '3']) !!}
+                        {!! Form::label('information', trans('user.information'), ['class' => 'control-label']) !!}
+                        {!! Form::textarea('information', $user['information'], ['class' => 'form-control', 'rows' => '3']) !!}
 
                         <div class="block"></div>
 

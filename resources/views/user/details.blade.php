@@ -17,9 +17,9 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                                <table class="table table-striped table-bordered table-hover" id="dataTables">
                                     <tr>
-                                        <td>{!! Html::image($user->avatar(), null, ['class'=> 'img-responsive img']) !!}</td>
+                                        <td>{!! Html::image($user->avatar(), null, ['class' => 'img-responsive img']) !!}</td>
                                     </tr>
                                     <tr>
                                         <td>{{ trans('user.name') }}:</td>

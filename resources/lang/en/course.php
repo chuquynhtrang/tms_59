@@ -29,4 +29,10 @@ return [
     'view_subjects' => 'View Subjects In Course',
     'view_trainees' => 'View Trainees In Course',
     'not_found' => 'Course is not found',
+    'start' => 'Start',
+    'working' => 'Working',
+    'finish' => 'Finish',
+    'status' => 'Status',
+    'started_date' => 'Start Date',
+    'ended_date' => 'End Date',
 ];

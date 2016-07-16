@@ -13,7 +13,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role'
+        'name', 'email', 'password', 'role',
     ];
 
     /**
@@ -32,17 +32,27 @@ class User extends Authenticatable
 
     public function courses()
     {
-        return $this->belongsToMany(Course::class, 'user_courses');
+        return $this->belongsToMany(Course::class, 'user_courses')->withPivot('status', 'started_date', 'ended_date');
     }
 
     public function subjects()
     {
-        return $this->belongsToMany(Subject::class, 'user_subjects');
+        return $this->belongsToMany(Subject::class, 'user_subjects')->withPivot('status', 'started_date', 'ended_date');
     }
 
     public function tasks()
     {
         return $this->belongsToMany(Task::class, 'user_tasks');
+    }
+
+    public function userSubjects()
+    {
+        return $this->hasMany(UserSubject::class, 'user_id', 'id');
+    }
+
+    public function userCourses()
+    {
+        return $this->hasMany(UserCourse::class, 'user_id', 'id');
     }
 
     /**
@@ -77,6 +87,7 @@ class User extends Authenticatable
 
         return $results;
     }
+
     public function avatar(){
         return config('user.path_to_avatar') . $this->avatar;
     }
